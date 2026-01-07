@@ -1,4 +1,4 @@
-const { calcularTotalCafeteria } = require('./consumoCafeteria');
+const { calcularTotalCafeteria } = require('./consumoCafeteria1');
 
 describe('Pruebas calculos cafeteria', () => {
     test('Happy path: Calcular consumo', () => {
@@ -10,6 +10,7 @@ describe('Pruebas calculos cafeteria', () => {
     });
 
     test('Sad path: arreglo invalido', () => {
+        
         expect( () => calcularTotalCafeteria('invalido',10)).toThrow('items invalidos');
     });
 

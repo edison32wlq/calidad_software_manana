@@ -1,10 +1,13 @@
 function calcularTotalCafeteria(items, ivaPorcentaje){
     if(!Array.isArray(items) )
         throw new TypeError('items invalidos');
-    
+
+
     items.forEach((item, i) =>{
         if(typeof item !== 'object' || item == null)
             throw new TypeError('Objeto no valido');
+
+        
 
         if (typeof item.nombre !== 'string' || item.nombre.trim() === '')
             throw new TypeError(`Nombre invalido`);
@@ -23,9 +26,15 @@ function calcularTotalCafeteria(items, ivaPorcentaje){
     for (let item of items) {
         subtotal += item.precioUnitario * item.cantidad;
     }
+
+    //subtotal = 500
+    //iva=10
     const iva = (ivaPorcentaje/100) * subtotal
 
+    //iva = 50
+
     const total = iva + subtotal
+    //total= 550
     return total;
  
 }
